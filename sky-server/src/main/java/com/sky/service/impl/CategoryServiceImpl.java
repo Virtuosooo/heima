@@ -46,12 +46,12 @@ public class CategoryServiceImpl implements CategoryService {
         category.setStatus(StatusConstant.ENABLE);
 
         //设置当前记录创建时间和修改时间
-        category.setCreateTime(LocalDateTime.now());
-        category.setUpdateTime(LocalDateTime.now());
+        //category.setCreateTime(LocalDateTime.now());
+        //category.setUpdateTime(LocalDateTime.now());
 
         //设置当前记录创建人id和修改人id
-        category.setCreateUser(BaseContext.getCurrentId());
-        category.setUpdateUser(BaseContext.getCurrentId());
+        //category.setCreateUser(BaseContext.getCurrentId());
+        //category.setUpdateUser(BaseContext.getCurrentId());
 
         categoryMapper.insert(category);
     }
@@ -70,8 +70,8 @@ public class CategoryServiceImpl implements CategoryService {
         Category category = new Category();
         BeanUtils.copyProperties(categoryDTO,category);
         //设置修改时间、修改人
-        category.setUpdateTime(LocalDateTime.now());
-        category.setUpdateUser(BaseContext.getCurrentId());
+        //category.setUpdateTime(LocalDateTime.now());
+        //category.setUpdateUser(BaseContext.getCurrentId());
         categoryMapper.update(category);
     }
 
@@ -116,7 +116,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     /**
-     * 根据用户名查询员工
+     * 启用禁用员工
      * @param status
      * @param id
      */
@@ -127,10 +127,10 @@ public class CategoryServiceImpl implements CategoryService {
                 .id(id)
                 .build();
         //设置当前记录修改时间
-        category.setUpdateTime(LocalDateTime.now());
+        //category.setUpdateTime(LocalDateTime.now());
 
         //设置当前记录修改人id
-        category.setUpdateUser(BaseContext.getCurrentId());
+        //category.setUpdateUser(BaseContext.getCurrentId());
         categoryMapper.update(category);
     }
 
